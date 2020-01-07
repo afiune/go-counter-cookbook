@@ -16,6 +16,11 @@ bin/*
 .kitchen/
 kitchen.local.yml
 
+# Terraform
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+
 # Chef
 Berksfile.lock
 berks-cookbooks/
