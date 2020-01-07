@@ -10,6 +10,7 @@ describe 'go-counter-cookbook::default' do
   context 'When all attributes are default' do
     it 'converges successfully' do
       stub_command("hab svc status afiune/go-counter").and_return("")
+      stub_command("hab sup status").and_return("")
       expect { chef_run }.to_not raise_error
     end
   end
