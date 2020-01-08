@@ -1,5 +1,5 @@
 name 'go-counter-cookbook'
 license 'All Rights Reserved'
 description 'Installs/Configures go-counter-cookbook'
-version '0.2.1'
+version '0.3.0'
 depends 'habitat'

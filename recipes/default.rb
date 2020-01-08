@@ -16,6 +16,21 @@ end
 
 # @afiune not yet supported for Chef Client version 12.X
 #hab_sup 'default'
+directory '/hab/sup/default' do
+  owner 'root'
+  group 'root'
+  mode '0755'
+  recursive true
+  action :create
+end
+
+ruby_block 'hab_sup start' do
+  block do
+    `setsid hab sup run > /hab/sup/default/sup.log 2>&1`
+  end
+  not_if 'hab sup status'
+  action :create
+end
 
 hab_package 'afiune/go-counter' do
   not_if 'hab svc status afiune/go-counter'
