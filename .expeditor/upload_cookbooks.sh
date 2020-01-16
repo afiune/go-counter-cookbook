@@ -6,7 +6,7 @@ set -eou pipefail
 key_path=/tmp/key.pem
 
 function cleanup() {
-  rm -f "$key_path" berks-cookbooks
+  rm -rf "$key_path" berks-cookbooks
 }
 
 vault kv get -field afiune_private_key secret/chef-workstation/hosted-org > $key_path
