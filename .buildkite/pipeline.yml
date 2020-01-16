@@ -1,0 +1,9 @@
+---
+steps:
+  - label: ":chef: unit"
+    command:
+      - chef exec rspec
+    expeditor:
+      executor:
+        docker:
+          privileged: true
