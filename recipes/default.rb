@@ -24,4 +24,4 @@ hab_service 'afiune/go-counter' do
   not_if 'hab svc status afiune/go-counter'
 end
 
-include_recipe 'go-counter-cookbook::lots_of_deprecations' if respond_to?(:require_recipe)
+require_recipe 'go-counter-cookbook::lots_of_deprecations' if respond_to?(:require_recipe)
