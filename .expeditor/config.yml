@@ -1,0 +1,15 @@
+---
+project:
+  alias: go-counter-cookbook
+
+slack:
+  notify_channel: chef-ws-notify
+
+pipelines:
+  - verify:
+      description: Pull Request validation tests
+
+subscriptions:
+  - workload: pull_request_merged:{{agent_id}}:*
+    actions:
+      - bash:.expeditor/upload_cookbooks.sh
