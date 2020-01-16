@@ -1,5 +1,4 @@
 ---
-# The name we use for this project when interacting with Expeditor Slack App
 project:
   alias: go-counter-cookbook
 
